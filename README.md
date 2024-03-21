@@ -1,6 +1,6 @@
 # Projeto de Gestão de Fornecedores
 
-- Este projeto oferece uma solução completa para a gestão de fornecedores, permitindo o cadastro, visualização e edição de informações sobre fornecedores, produtos fornecidos e anexos relacionados.
+- Este projeto oferece uma solução simples para o cadastro de fornecedores e seus produtos, além de permitir o anexo de arquivos.
 - Além disso, o projeto foi desenvolvido como parte de um teste para uma posição de estágio. O objetivo era demonstrar habilidades em JavaScript, HTML, BOOTSTRAP (JQuery e CSS), AJAX  e práticas de desenvolvimento de software.
 
 # Tecnologias Utilizadas
