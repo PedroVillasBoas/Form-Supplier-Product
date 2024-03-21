@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Teste VFLOWS - Cadastro Fornecedor/Produto - Pedro Vilas Bôas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS Fluig -->
+  <link rel="stylesheet" type="text/css" href="https://fluig.totvs.com/style-guide/css/fluig-style-guide.min.css" />
+
+  <!-- Scripts JavaScript -->
+  <script src="https://fluig.totvs.com/portal/resources/js/jquery/jquery.js"></script>
+  <script src="https://fluig.totvs.com/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="https://fluig.totvs.com/portal/resources/js/mustache/mustache-min.js"></script>
+  <script src="https://fluig.totvs.com/style-guide/js/fluig-style-guide.min.js"></script>
+</head>
+
+<body>
+  <div class="fluig-style-guide">
+    <h1 class="page-header text-center">CADASTRO FORNECEDOR/PRODUTO</h1>
+
+    <form>
+      <!-- Dados do Fornecedor -->
+      <div class="container">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Dados do Fornecedor</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-8 form-group">
+                <label for="razaoSocial">Razão Social</label>
+                <input type="text" class="form-control" id="razaoSocial" required>
+              </div>
+              <div class="col-md-4 form-group">
+                <label for="cnpj">CNPJ</label>
+                <input type="text" class="form-control" id="cnpj" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8 form-group">
+                <label for="nomeFantasia">Nome Fantasia</label>
+                <input type="text" class="form-control" id="nomeFantasia" required>
+              </div>
+              <div class="col-md-4 form-group">
+                <label for="inscricaoEstadual">Inscrição Estadual</label>
+                <input type="text" class="form-control" id="inscricaoEstadual">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <label for="cep">CEP</label>
+                <span id="cepInvalido"></span>
+                <input type="text" class="form-control" id="cep" required>
+              </div>
+              <div class="col-md-4 col-md-offset-4 form-group">
+                <label for="inscricaoMunicipal">Inscrição Municipal</label>
+                <input type="text" class="form-control" id="inscricaoMunicipal">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8 form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" class="form-control" id="endereco" required>
+              </div>
+              <div class="col-md-4 form-group">
+                <label for="numero">Número</label>
+                <input type="text" class="form-control" id="numero" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="complemento">Complemento</label>
+                <input type="text" class="form-control" id="complemento">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" class="form-control" id="bairro" required>
+              </div>
+              <div class="col-md-4 form-group">
+                <label for="municipio">Municipio</label>
+                <input type="text" class="form-control" id="municipio" required>
+              </div>
+              <div class="col-md-3 col-md-offset-1 form-group ">
+                <label for="estado">Estado</label>
+                <input type="text" class="form-control" id="estado" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="nomePessoaContato">Nome da Pessoa de Contato</label>
+                <input type="text" class="form-control" id="nomePessoaContato" required>
+              </div>
+              <div class="col-md-3 form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" class="form-control" id="telefone" required>
+              </div>
+              <div class="col-md-3 form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+            </div>
+          </div> <!-- Fim Panel-Body -->
+        </div> <!-- Fim Panel-Info -->
+
+        <!-- Fim Dados do Fornecedor -->
+
+        <!-- Dados do Produto -->
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Produtos</h3>
+          </div>
+          <br>
+          <div class="panel-body" id="produtoPanelBody">
+
+            <!-- Produtos são inseridos dinamicamente quando o botão de Adicionar Produto for acionado -->
+
+          </div> <!-- Fim Panel-Body -->
+          <div class="row">
+            <div class="col-md-10  col-md-offset-1">
+              <button type="button" id="adicionarProduto" class="btn btn-success btn-lg btn-block"
+                onclick="addOutroProduto()">Adicionar Produto</button>
+            </div>
+          </div>
+          <br>
+        </div> <!-- Fim Panel-Info -->
+
+        <!-- Fim Dados do Produto -->
+
+        <!-- Anexos -->
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Anexos</h3>
+          </div>
+          <div class="panel-body">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <p class="panel-title">Itens</p>
+              </div>
+              <div class="panel-body" id="itensDiv">
+
+                <!-- Anexos são inseridos dinamicamente quando o botão de Incluir Anexo for acionado -->
+
+              </div> <!-- Fim Panel-Body | Itens -->
+            </div> <!-- Fim Panel-Default | Itens -->
+            <div class="row">
+              <div class="col-md-12">
+                <input type="file" class="btn btn-primary btn-sm hidden" id="fileInput" name="fileInput">
+                <button type="button" class="btn btn-success btn-lg btn-block"
+                  onclick="FLUIGC.utilities.parseInputFile('#fileInput'); document.getElementById('fileInput').click();">Incluir
+                  Anexo</button>
+              </div>
+            </div>
+          </div> <!-- Fim Panel-Body | Anexos -->
+        </div> <!-- Fim Panel-Info | Anexos -->
+
+        <!-- Fim Anexos -->
+
+        <button id="salvarFornecedor" type="button" class="btn btn-success btn-lg btn-block">Salvar Fornecedor</button>
+      </div> <!-- Fim Container -->
+    </form> <!-- Fim Formulario -->
+
+    <!-- Modal de Loading -->
+    <div id="loadingModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <p>Enviando dados, por favor aguarde...</p>
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Carregando...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fim Modal de Loading -->
+
+    <!-- Arquivos JavaScript -->
+    <script src="../JavaScript/cepFill.js"></script>
+    <script src="../JavaScript/produtos.js"></script>
+    <script src="../JavaScript/anexarDoc.js"></script>
+    <script src="../JavaScript/salvarFornecedor.js"></script>
+
+</body>
+
+</html>
